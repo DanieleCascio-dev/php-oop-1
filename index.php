@@ -2,14 +2,14 @@
 
 require_once __DIR__ . "/Models/Movie.php";
 
-$avatar = new Movie("Avatar", "2h 22m","Sci-Fi","2009","8");
-$titanic = new Movie ("Titanic","3h 30m", "Romantic","1997","9");
+$avatar = new Movie("Avatar", "2h 22m","Sci-Fi","Adventure","2009","8");
+$titanic = new Movie ("Titanic","3h 30m", "Romantic",null,"1997","9");
 
 
 $movies = [
   $avatar,
   $titanic,
-  $interstellar = new Movie("Intersetllar", "2h 49m", "Sci-fi", "2014","8,5"),
+  $interstellar = new Movie("Intersetllar", "2h 49m", "Sci-fi",null, "2014","8,5"),
 
 ];
 
