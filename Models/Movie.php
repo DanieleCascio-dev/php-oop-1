@@ -7,17 +7,15 @@ class Movie
 {
   public $title;
   public $lenght;
-  public $genre;
-  public $second_genre;
+  public $genres;
   public $year;
   public $rating;
 
-  function __construct($_title,$_lenght,$_genre, $_second_genre = null ,$_year = null,$_rating = null)
+  function __construct($_title,$_lenght,$_genres,$_year = null,$_rating = null)
   {
     $this->title = $_title;
     $this->lenght = $_lenght;
-    $this->genre = $_genre;
-    $this->second_genre = $_second_genre;
+    $this->genres = $_genres;
     $this->year = $_year;
     $this->rating = $_rating;
   }
@@ -26,4 +24,17 @@ class Movie
     return $this->rating . "/10";
   }
   
+  public function get_movie_details()
+  {
+    $genres_string= "";
+    foreach($this->genres as $key => $genre){
+      $genres_string .= $genre->name;
+      if($key < (count($this->genres) - 1)){
+        $genres_string .= ", ";
+      }
+    }
+
+    $result = "Title: {$this->title}. Time: {$this->lenght}. Genre: {$genres_string}.";
+    return $result;
+  }
 }
